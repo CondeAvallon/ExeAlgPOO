@@ -32,7 +32,7 @@ public class TV {
                 System.out.println("O volume está no máximo.");
             }
         } else {
-            System.out.println("A TV está desligada!");
+            System.out.println("\nA TV está desligada!");
         }
     }
 
@@ -46,31 +46,31 @@ public class TV {
                 System.out.println("O volume está no mínimo.");
             }
         } else {
-            System.out.println("A TV está desligada!");
+            System.out.println("\nA TV está desligada!");
         }
     }
 
     public void exibirCanal() {
         if (ligada == true) {
-            System.out.println("Canal: " + getCanal());
+            System.out.println("\nCanal: " + getCanal());
         } else {
-            System.out.println("A TV está desligada!");
+            System.out.println("\nA TV está desligada!");
         }
     }
 
     public void exibirVolume() {
         if (ligada == true) {
-            System.out.println("Volume: " + getVolume());
+            System.out.println("\nVolume: " + getVolume());
         } else {
-            System.out.println("A TV está desligada!");
+            System.out.println("\nA TV está desligada!");
         }
     }
 
     public void verificarTV() {
         if (ligada == true) {
-            System.out.println("A TV está ligada.");
+            System.out.println("\nA TV está ligada.");
         } else {
-            System.out.println("A TV está desligada.");
+            System.out.println("\nA TV está desligada.");
         }
     }
 

@@ -76,10 +76,19 @@ public class MainTV {
     }
 
     public static int receberCanal() {
-        Scanner console = new Scanner(System.in);
-        System.out.print("\nDigite o canal desejado: ");
-        int canal = console.nextInt();
-        return canal;
+        int canal;
+        boolean sair = false;
+        while (sair == false) {
+            try {
+                Scanner console = new Scanner(System.in);
+                System.out.print("\nDigite o canal desejado: ");
+                canal = console.nextInt();
+                return canal;
+            } catch (Exception ex) {
+                System.out.println("Entrada inválida!");
+            }
+        }
+        return 0;
     }
 
 }

@@ -11,10 +11,8 @@ public class MainIMC {
         
         String nome = lerNome();
         p1.setNome(nome);
-        
         float peso = lerPeso();
         p1.setPeso (peso);
-        
         float altura = lerAltura();
         p1.setAltura(altura);
         
