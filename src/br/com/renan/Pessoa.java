@@ -89,7 +89,7 @@ public class Pessoa {
     }
     
     public void exibirDados (String nome, String IMC) {
-        System.out.printf("O cliente %s está %s \n", nome, IMC);
+        System.out.printf("\nResultado: %s está %s \n", nome, IMC);
     }
 
 }
