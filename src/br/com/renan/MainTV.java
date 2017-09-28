@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class MainTV {
 
     public static void main(String[] args) {
-        TV tv1 = new TV();
+        TV tv1 = criarTV();
         boolean sair;
         do {
             apresentarMenu();
@@ -13,6 +13,11 @@ public class MainTV {
             sair = menu(opcaoMenu, tv1);
         } while (sair == false);
 
+    }
+
+    public static TV criarTV() {
+        TV tv = new TV();
+        return tv;
     }
 
     public static void apresentarMenu() {
@@ -30,8 +35,12 @@ public class MainTV {
 
     public static int receberOpcao() {
         Scanner console = new Scanner(System.in);
-        System.out.print("\nDigite a opção desejada: ");
-        int opcao = console.nextInt();
+        int opcao = 0;
+        try {
+            System.out.print("\nDigite a opção desejada: ");
+            opcao = console.nextInt();
+        } catch (Exception ex) {
+        }
         return opcao;
 
     }
@@ -46,7 +55,7 @@ public class MainTV {
                 tv.desligarTV();
                 break;
             case 3:
-                int canal = receberCanal();
+                int canal = receberCanal(tv);
                 tv.setCanal(canal);
                 break;
             case 4:
@@ -75,19 +84,21 @@ public class MainTV {
         return sair;
     }
 
-    public static int receberCanal() {
+    public static int receberCanal(TV tv) {
         int canal;
         boolean sair = false;
-        while (sair == false) {
-            try {
-                Scanner console = new Scanner(System.in);
-                System.out.print("\nDigite o canal desejado: ");
-                canal = console.nextInt();
-                return canal;
-            } catch (Exception ex) {
-                System.out.println("Entrada inválida!");
+        if (tv.isLigada()) {
+            while (sair == false) {
+                try {
+                    Scanner console = new Scanner(System.in);
+                    System.out.print("\nDigite o canal desejado (0 a 99): ");
+                    canal = console.nextInt();
+                    return canal;
+                } catch (Exception ex) {
+                    System.out.println("\n** Entrada inválida! **");
+                }
             }
-        }
+        } 
         return 0;
     }
 
