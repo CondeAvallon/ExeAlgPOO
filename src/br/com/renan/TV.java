@@ -24,47 +24,23 @@ public class TV {
     }
 
     public void aumentarVolume() {
-        if (isLigada()) {
-            if (volume < 20) {
-                volume++;
-                System.out.println("\n** Volume aumentado! **");
-                System.out.println("Volume: " + getVolume());
-            } else {
-                System.out.println("\n** O volume está no máximo!");
-            }
-        } else {
-            System.out.println("\n** A TV está desligada! **");
-        }
+        volume++;
+        System.out.println("\n** Volume aumentado! **");
+        System.out.println("Volume: " + getVolume());
     }
 
     public void diminuirVolume() {
-        if (isLigada()) {
-            if (volume > 0) {
-                volume--;
-                System.out.println("\n** Volume diminuído! **");
-                System.out.println("Volume: " + getVolume());
-            } else {
-                System.out.println("\n ** O volume está no mínimo! **");
-            }
-        } else {
-            System.out.println("\n** A TV está desligada! **");
-        }
+        volume--;
+        System.out.println("\n** Volume diminuído! **");
+        System.out.println("Volume: " + getVolume());
     }
 
     public void exibirCanal() {
-        if (isLigada()) {
-            System.out.println("\n** Canal atual: " + getCanal() + " **");
-        } else {
-            System.out.println("\n** A TV está desligada! **");
-        }
+        System.out.println("\n** Canal atual: " + getCanal() + " **");
     }
 
     public void exibirVolume() {
-        if (isLigada()) {
-            System.out.println("\n** Volume: " + getVolume() + " **");
-        } else {
-            System.out.println("\n** A TV está desligada! **");
-        }
+        System.out.println("\n** Volume: " + getVolume() + " **");
     }
 
     public void verificarTV() {
@@ -92,16 +68,7 @@ public class TV {
      * @param canal the canal to set
      */
     public void setCanal(int canal) {
-        if (isLigada()) {
-            if (canal >= 0 && canal <= 99) {
-                this.canal = canal;
-                System.out.println("\n** Canal alterado! (" + canal + ") **");
-            } else {
-                System.out.println("\n** Este canal não existe! **");
-            }
-        } else {
-            System.out.println("\n** A TV está desligada! **");
-        }
+        this.canal = canal;
     }
 
     /**
