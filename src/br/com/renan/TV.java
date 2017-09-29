@@ -1,3 +1,4 @@
+//Autor: Renan Bonini
 package br.com.renan;
 
 public class TV {
@@ -18,7 +19,7 @@ public class TV {
     }
 
     public void desligarTV() {
-        ligada = false;
+        resetTV();
         System.out.println("\n** TV desligada! **");
     }
 
@@ -79,6 +80,12 @@ public class TV {
      */
     public int getCanal() {
         return canal;
+    }
+
+    public void resetTV() {
+        canal = 2;
+        volume = 10;
+        ligada = false;
     }
 
     /**

@@ -1,25 +1,30 @@
+//Autor: Renan Bonini
 package br.com.renan;
 
 import java.util.Scanner;
 
 public class MainTV {
 
+    //recebe o objeto criado em criarTV(), apresenta o menu e a funcao menu()
+    //o menu fica em loop até que o usuario escolha sair
     public static void main(String[] args) {
-        TV tv1 = criarTV();
+        TV tv = criarTV();
         boolean sair;
         do {
             apresentarMenu();
             int opcaoMenu = receberOpcao();
-            sair = menu(opcaoMenu, tv1);
+            sair = menu(opcaoMenu, tv);
         } while (sair == false);
 
     }
 
+    //cria o objeto TV
     public static TV criarTV() {
         TV tv = new TV();
         return tv;
     }
 
+    //apresenta as opcoes de compostas no menu
     public static void apresentarMenu() {
         System.out.println("\n=====  TV  ===== \n");
         System.out.println("1 - Ligar TV");
@@ -33,18 +38,23 @@ public class MainTV {
         System.out.println("9 - Sair");
     }
 
+    //recebe a opcao desejada pelo usuario para ser introduzida na funcao menu()
     public static int receberOpcao() {
         Scanner console = new Scanner(System.in);
         int opcao = 0;
         try {
             System.out.print("\nDigite a opção desejada: ");
             opcao = console.nextInt();
+            System.out.println("==========================");
         } catch (Exception ex) {
         }
         return opcao;
 
     }
 
+    //menu que tem a funcao de chamar os metodos do objeto TV
+    //@param opcao - opcao digitada pelo usuario na funcao receberOpcao()
+    //@param tv - objeto TV criado em criarTV() e instanciado no main
     public static boolean menu(int opcao, TV tv) {
         boolean sair = false;
         switch (opcao) {
@@ -78,12 +88,15 @@ public class MainTV {
                 sair = true;
                 break;
             default:
-                System.out.println("Opção inválida!");
+                System.out.println("\n==========================");
+                System.out.println("\n ** Opção inválida! **");
                 break;
         }
         return sair;
     }
 
+    //recebe o valor digitado pelo usuario para ser inserido como canal
+    //@param tv - objeto criado no main
     public static int receberCanal(TV tv) {
         int canal;
         boolean sair = false;
@@ -98,7 +111,7 @@ public class MainTV {
                     System.out.println("\n** Entrada inválida! **");
                 }
             }
-        } 
+        }
         return 0;
     }
 

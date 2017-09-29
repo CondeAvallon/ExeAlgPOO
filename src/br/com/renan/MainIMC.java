@@ -1,29 +1,36 @@
-
+//Autor: Renan Bonini
 package br.com.renan;
 
 import java.util.Scanner;
 
 public class MainIMC {
     
+    
     public static void main(String[] args) {
         System.out.println("=== PROGRAMA DE CÁLCULO DE IMC === \n");
-        Pessoa p1 = new Pessoa ();
+        Pessoa pessoa = new Pessoa ();
         
+        //instacia o nome, peso e altura e os define no objeto pessoa
         String nome = lerNome();
-        p1.setNome(nome);
+        pessoa.setNome(nome);
         float peso = lerPeso();
-        p1.setPeso (peso);
+        pessoa.setPeso (peso);
         float altura = lerAltura();
-        p1.setAltura(altura);
+        pessoa.setAltura(altura);
         
-        String nome1 = p1.getNome();
-        float peso1 = p1.getPeso();
-        float altura1 = p1.getAltura();
-        float IMC = p1.calcularIMC(peso1, altura1);
-        String categoria = p1.informarCategoriaIMC(IMC);
-        p1.exibirDados(nome1, categoria);
+        /*pega o nome, peso e altura do objeto pessoa para calcular o IMC
+        com o metodo calcularIMC() e depois informa a categoria da pessoa com
+        o metodo informarCategoriaIMC()
+        */
+        String nome1 = pessoa.getNome();
+        float peso1 = pessoa.getPeso();
+        float altura1 = pessoa.getAltura();
+        float IMC = pessoa.calcularIMC(peso1, altura1);
+        String categoria = pessoa.informarCategoriaIMC(IMC);
+        pessoa.exibirDados(nome1, categoria);
     }
     
+    //le o nome que da pessoa para que seja identificada
     public static String lerNome() {
         Scanner console = new Scanner (System.in);
         System.out.print("Digite o seu nome: ");
@@ -32,6 +39,7 @@ public class MainIMC {
         return nome;
     }
     
+    //le o peso da pessoa que sera utilizado para calcular o IMC
     public static float lerPeso() {
         Scanner console = new Scanner (System.in);
         System.out.print("Digite o seu peso: ");
@@ -39,6 +47,7 @@ public class MainIMC {
         return peso;
     }
     
+    //le a altura da pessoa que sera utilizada para calcular o IMC
     public static float lerAltura() {
         Scanner console = new Scanner (System.in);
         System.out.print("Digite a sua altura: ");
